@@ -9,6 +9,17 @@ const port = process.env.PORT || 2000
 
 server.use(bodyParser.json());
 
+mongoose.connect(DB_URL).then(
+        function(){
+            console.log("Database is connected")
+        }
+    ).
+    catch(
+        function(){
+            console.log("Database connecting error!")
+        }
+   )
+    
 //Get user data from database
 server.get('/user', async (req, res) => {
     try{
@@ -45,16 +56,6 @@ server.post("/add", async (req, res) => {
 //Running application at localhost:2000
 server.listen(port, function (){
     console.log("Server is running on 2000")
-    mongoose.connect(DB_URL).then(
-        function(){
-            console.log("Database is connected")
-        }
-    ).
-    catch(
-        function(){
-            console.log("Database connecting error!")
-        }
-    )
     
     
 })
