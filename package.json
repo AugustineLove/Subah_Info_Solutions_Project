@@ -4,7 +4,7 @@
   "description": "A school management system backend for subah_info_collections",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "build": "nodemon server.js"
   },
   "author": "Augustine Love Stephens",
   "license": "ISC",
