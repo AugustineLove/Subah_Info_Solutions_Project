@@ -4,6 +4,7 @@ const DB_URL = "mongodb+srv://AugustineLove:stephens03@cluster0.1qgu7j2.mongodb.
 const User = require('./model/studentModel');
 const bodyParser = require('body-parser')
 const server = express()
+const PORT = process.env.PORT || 2000
 
 
 server.use(bodyParser.json());
@@ -42,7 +43,7 @@ server.post("/add", async (req, res) => {
 });
 
 //Running application at localhost:2000
-server.listen(2000, function (){
+server.listen(PORT, function (){
     console.log("Server is running on 2000")
     mongoose.connect(DB_URL).then(
         function(){
